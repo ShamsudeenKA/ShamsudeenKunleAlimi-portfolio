@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamsudeen Alimi | Integrated Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Inter:wght@300;400;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Font Assignments */
+        h1, h2, h3, h4, .tab-text { font-family: 'Fredoka', sans-serif; }
+        body, p, li { font-family: 'Inter', sans-serif; }
+        .handwritten { font-family: 'Patrick Hand', cursive; }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Active Tab Styling */
+        .active-tab {
+            border-bottom: 4px solid #EF4444;
+            color: #EF4444;
+            transform: translateY(-2px);
+        }
+
+        /* Sticker Style for Tools */
+        .sticker {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+        }
+        .sticker:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 4px 8px 12px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        /* Hide scrollbar for tab navigation */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Lightbox Overlay */
+        #lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#1f2937',
+                        'brand-red': '#EF4444',
+                        'brand-gray': '#4b5563',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-brand-dark">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-semibold tracking-tight text-brand-red">
+                Shamsudeen <span class="text-brand-dark">Alimi</span>
+            </h1>
+            <div class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="#hero" class="hover:text-brand-red transition">Home</a>
+                <a href="#about" class="hover:text-brand-red transition">About</a>
+                <a href="#roles" class="hover:text-brand-red transition">Expertise</a>
+                <a href="#clients" class="hover:text-brand-red transition">Clients</a>
+                <a href="#metrics" class="hover:text-brand-red transition">Results</a>
+                <a href="#contact" class="hover:text-brand-red transition">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white transition-all duration-200 bg-brand-red rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-600 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                Let's Chat
+            </a>
+            <button class="md:hidden text-gray-500 hover:text-brand-red">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative pt-20 pb-24 lg:pt-32 lg:pb-32 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                
+                <div class="relative inline-block mb-8 group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-red-400 to-orange-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <img class="relative w-64 h-64 rounded-full border-4 border-white shadow-2xl object-cover transform transition duration-500 hover:scale-105"
+                        src="https://i.postimg.cc/QdxCnz5L/fulll.png"
+                        alt="Shamsudeen Kunle Alimi"
+                    >
+                </div>
+
+                <h2 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight text-brand-dark">
+                    Shamsudeen Kunle Alimi
+                </h2>
+                
+                <div class="handwritten text-2xl sm:text-3xl text-brand-gray mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Social Media Manager <span class="text-brand-red">•</span> Video Editor <span class="text-brand-red">•</span> Scriptwriter <span class="text-brand-red">•</span> Graphics Designer <span class="text-brand-red">•</span> Sound Production
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h3 class="text-3xl font-bold mb-8 relative inline-block">
+                    My Integrated Approach
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-red rounded-full opacity-50"></span>
+                </h3>
+                <div class="text-lg text-brand-gray leading-loose space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <p>
+                        I am a multifaceted creative professional who transforms ideas into compelling digital experiences. With expertise spanning social media management, digital strategy, video editing, graphic design, scriptwriting, and sound production, I bring a comprehensive approach to building brand presence.
+                    </p>
+                    <p>
+                        As a <span class="font-bold text-brand-red handwritten text-2xl">Creative Director</span>, I don't just execute campaigns I envision them from concept to completion. My integrated skill set enables me to manage projects holistically, ensuring every element works together to create powerful, cohesive brand experiences that captivate audiences and deliver results.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2">What Clients Say</h3>
+                    <p class="handwritten text-xl text-brand-gray">Trusted by industry partners for integrated creative solutions.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-md border-t-4 border-brand-red">
+                        <i class="fa-solid fa-quote-left text-brand-red text-2xl mb-4"></i>
+                        <p class="italic text-brand-gray mb-4">"Working with Shamsudeen was a total game-changer. The **creative direction completely transformed our social strategy** literally overnight! We saw immediate, measurable growth across all platforms—he's a true asset for integrated media."</p>
+                        <p class="font-semibold text-brand-dark">Aisha R.</p>
+                        <p class="text-sm text-brand-gray">Marketing Director, Tech Startup</p>
+                    </div>
+                    
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-md border-t-4 border-brand-red">
+                        <i class="fa-solid fa-quote-left text-brand-red text-2xl mb-4"></i>
+                        <p class="italic text-brand-gray mb-4">"We had a complex project that needed high-end video editing and professional sound mixing. Shamsudeen didn't just meet our specs, he **exceeded our expectations**. His attention to detail, especially in post-production, is unmatched."</p>
+                        <p class="font-semibold text-brand-dark">Daniel M.</p>
+                        <p class="text-sm text-brand-gray">Head of Production, Regional Agency</p>
+                    </div>
+                    
+                    <div class="p-6 bg-slate-50 rounded-xl shadow-md border-t-4 border-brand-red">
+                        <i class="fa-solid fa-quote-left text-brand-red text-2xl mb-4"></i>
+                        <p class="italic text-brand-gray mb-4">"From the initial idea to the final graphic, the design work was totally flawless and delivered ahead of schedule. He has an incredible ability to **translate complex concepts into clear, captivating visuals** without any fuss."</p>
+                        <p class="font-semibold text-brand-dark">Sarah E.</p>
+                        <p class="text-sm text-brand-gray">Freelance Client & Entrepreneur</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roles" class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2">My Professional Pillars</h3>
+                    <p class="handwritten text-xl text-brand-gray">Click to explore my toolkit and proofs</p>
+                </div>
+
+                <div class="flex justify-center mb-10 overflow-x-auto no-scrollbar pb-2">
+                    <div class="flex space-x-2 bg-slate-100 p-1 rounded-xl">
+                        <button data-role="strategy" class="role-tab active-tab px-6 py-3 rounded-lg text-lg font-medium transition-all duration-300 flex items-center bg-white shadow-sm">
+                            <i class="fa-solid fa-bullseye mr-2"></i> Strategy & Management
+                        </button>
+                        <button data-role="design" class="role-tab px-6 py-3 rounded-lg text-lg font-medium text-gray-500 hover:text-brand-dark transition-all duration-300 flex items-center hover:bg-white/50">
+                            <i class="fa-solid fa-pen-nib mr-2"></i> Design & Branding
+                        </button>
+                        <button data-role="production" class="role-tab px-6 py-3 rounded-lg text-lg font-medium text-gray-500 hover:text-brand-dark transition-all duration-300 flex items-center hover:bg-white/50">
+                            <i class="fa-solid fa-film mr-2"></i> Video & Sound
+                        </button>
+                    </div>
+                </div>
+
+                <div id="strategy-content" class="role-content animate-fade-in">
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl shadow-slate-200/50">
+                        <div class="grid lg:grid-cols-2 gap-12">
+                            <div>
+                                <h4 class="text-2xl font-bold text-brand-red mb-4">Creative Strategy & Social Media Management</h4>
+                                <p class="text-brand-gray mb-6 leading-relaxed">
+                                    I define the brand's voice and growth roadmap. I oversee full-cycle social media management, ensuring content aligns with market trends and delivers measurable ROI.
+                                </p>
+                                
+                                <h5 class="handwritten text-xl font-bold mb-4 text-brand-dark">My Toolbox:</h5>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="sticker bg-blue-100 text-blue-700 px-3 py-2 rounded-lg handwritten text-lg border border-blue-200 flex items-center">
+                                        <i class="fa-brands fa-meta mr-2 text-xl"></i> Meta
+                                    </span>
+                                    <span class="sticker bg-orange-100 text-orange-600 px-3 py-2 rounded-lg handwritten text-lg border border-orange-200 flex items-center">
+                                        <i class="fa-brands fa-buffer mr-2 text-xl"></i> Buffer
+                                    </span>
+                                    <span class="sticker bg-green-100 text-green-700 px-3 py-2 rounded-lg handwritten text-lg border border-green-200 flex items-center">
+                                        <i class="fa-solid fa-seedling mr-2 text-xl"></i> Sprout
+                                    </span>
+                                    <span class="sticker bg-indigo-100 text-indigo-700 px-3 py-2 rounded-lg handwritten text-lg border border-indigo-200 flex items-center">
+                                        <i class="fa-solid fa-share-nodes mr-2 text-xl"></i> Hootsuite
+                                    </span>
+                                    <span class="sticker bg-red-100 text-red-700 px-3 py-2 rounded-lg handwritten text-lg border border-red-200 flex items-center">
+                                        <i class="fa-solid fa-file-powerpoint mr-2 text-xl"></i> PPoint
+                                    </span>
+                                    <span class="sticker bg-blue-50 text-blue-900 px-3 py-2 rounded-lg handwritten text-lg border border-blue-200 flex items-center">
+                                        <i class="fa-solid fa-file-word mr-2 text-xl"></i> Word
+                                    </span>
+                                    <span class="sticker bg-green-50 text-green-700 px-3 py-2 rounded-lg handwritten text-lg border border-green-200 flex items-center">
+                                        <i class="fa-solid fa-file-excel mr-2 text-xl"></i> Excel
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h5 class="handwritten text-xl font-bold mb-4 text-brand-dark flex items-center">
+                                    <i class="fa-solid fa-chart-line mr-2 text-brand-red"></i> Proof of Growth
+                                </h5>
+                                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/pTvgqwhf/Whats_App_Image_2025_11_26_at_19_18_55_80b42926.jpg">
+                                        <img src="https://i.postimg.cc/pTvgqwhf/Whats_App_Image_2025_11_26_at_19_18_55_80b42926.jpg" class="w-full h-24 object-cover" alt="Analytics 1">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/tTbL2KZd/Whats_App_Image_2025_11_26_at_19_18_56_dd4b98ff.jpg">
+                                        <img src="https://i.postimg.cc/tTbL2KZd/Whats_App_Image_2025_11_26_at_19_18_56_dd4b98ff.jpg" class="w-full h-24 object-cover" alt="Analytics 2">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/tTbL2KZd/Whats_App_Image_2025_11_26_at_19_18_56_dd4b98ff.jpg">
+                                        <img src="https://i.postimg.cc/tTbL2KZd/Whats_App_Image_2025_11_26_at_19_18_56_dd4b98ff.jpg" class="w-full h-24 object-cover" alt="Analytics 3">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/B63dMrLg/Whats_App_Image_2025_11_26_at_19_20_04_c20f208a.jpg">
+                                        <img src="https://i.postimg.cc/B63dMrLg/Whats_App_Image_2025_11_26_at_19_20_04_c20f208a.jpg" class="w-full h-24 object-cover" alt="Analytics 4">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/Ss4wDB2Z/Whats_App_Image_2025_11_26_at_19_20_05_cb3bc500.jpg">
+                                        <img src="https://i.postimg.cc/Ss4wDB2Z/Whats_App_Image_2025_11_26_at_19_20_05_cb3bc500.jpg" class="w-full h-24 object-cover" alt="Analytics 5">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/sXztwkQm/Whats_App_Image_2025_11_26_at_19_22_21_0510292d.jpg">
+                                        <img src="https://i.postimg.cc/sXztwkQm/Whats_App_Image_2025_11_26_at_19_22_21_0510292d.jpg" class="w-full h-24 object-cover" alt="Analytics 6">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/wvzS0Cyk/Whats_App_Image_2025_11_26_at_19_22_22_e6dae069.jpg">
+                                        <img src="https://i.postimg.cc/wvzS0Cyk/Whats_App_Image_2025_11_26_at_19_22_22_e6dae069.jpg" class="w-full h-24 object-cover" alt="Analytics 7">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/Ss4wDB2W/Whats_App_Image_2025_11_26_at_19_22_23_5f2b6e0e.jpg">
+                                        <img src="https://i.postimg.cc/Ss4wDB2W/Whats_App_Image_2025_11_26_at_19_22_23_5f2b6e0e.jpg" class="w-full h-24 object-cover" alt="Analytics 8">
+                                    </div>
+                                    <div class="analytics-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105 border border-gray-200 cursor-pointer" data-img="https://i.postimg.cc/63KDYk2C/Whats_App_Image_2025_11_26_at_19_22_24_042c52e7.jpg">
+                                        <img src="https://i.postimg.cc/63KDYk2C/Whats_App_Image_2025_11_26_at_19_22_24_042c52e7.jpg" class="w-full h-24 object-cover" alt="Analytics 9">
+                                    </div>
+                                    
+                                </div>
+                                <p class="text-xs text-gray-400 mt-2 italic text-right">*Click images to enlarge (Lightbox)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="design-content" class="role-content hidden animate-fade-in">
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl shadow-slate-200/50">
+                        <h4 class="text-2xl font-bold text-brand-red mb-4">Graphics Designer</h4>
+                        <p class="text-brand-gray mb-8">
+                            I bring brands to life through compelling visual design. My expertise in <span class="font-bold">Adobe Photoshop</span> allows me to create stunning digital assets, from striking social media visuals to polished brand collateral.
+                        </p>
+                        
+                        <h5 class="handwritten text-xl font-bold mb-4 text-brand-dark">Creative Stack:</h5>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="sticker bg-[#001E36] text-[#31A8FF] px-3 py-2 rounded-lg handwritten text-xl border-2 border-[#31A8FF] flex items-center font-bold">
+                                Ps (Photoshop)
+                            </span>
+                            <span class="sticker bg-gradient-to-r from-teal-400 to-blue-500 text-white px-3 py-2 rounded-lg handwritten text-lg flex items-center">
+                                <span class="font-bold">Canva</span>
+                            </span>
+                            </div>
+                        
+                        <div class="mt-8 p-6 bg-slate-50 rounded-xl border border-dashed border-gray-300 text-center">
+                            <h5 class="handwritten text-xl font-bold mb-3 text-brand-dark">View My Latest Design Work</h5>
+                            <a href="https://www.behance.net/shamsudeenkunlealimi" target="_blank" id="behance-link" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-all duration-200 bg-brand-red rounded-full hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                                <i class="fa-brands fa-behance mr-2"></i> Visit Behance Portfolio
+                            </a>
+                            <p class="text-xs text-gray-400 mt-2 italic">Your Behance profile will always display your latest projects.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="production-content" class="role-content hidden animate-fade-in">
+                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl shadow-slate-200/50">
+                        <h4 class="text-2xl font-bold text-brand-red mb-4">Video Editor & Sound Producer</h4>
+                        <p class="text-brand-gray mb-8">
+                            I transform raw footage and audio into polished, engaging media. I craft compelling visual stories and ensure immersive soundscapes using tools like <span class="font-bold">Adobe Premiere Pro</span> and <span class="font-bold">Adobe Audition</span>.
+                        </p>
+                        
+                        <h5 class="handwritten text-xl font-bold mb-4 text-brand-dark">Project Showcase:</h5>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <a href="https://drive.google.com/file/d/1G-ZNiAGRdFIXLJqLb8VkGGbT3ntEy0H1/view?usp=drive_link" target="_blank" class="group block overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-[1.02] relative border-4 border-white">
+                                <img src="https://i.postimg.cc/pTjvyQN2/Whats_App_Image_2025_11_28_at_02_22_34_736e4b9b.jpg" alt="Video Project Thumbnail 1" class="w-full h-auto object-cover transition-opacity duration-300 group-hover:opacity-75">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                    <div class="text-center">
+                                        <i class="fa-solid fa-circle-play text-white text-5xl mb-2"></i>
+                                        <p class="text-white font-bold text-lg handwritten">Short-Form Content Campaign</p>
+                                        <p class="text-xs text-gray-200">Click to view on Drive (Link 1)</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1sMOEB234MWL4w9yb9WLxhxhJti-0wWBP/view?usp=drive_link" target="_blank" class="group block overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-[1.02] relative border-4 border-white">
+                                <img src="https://i.postimg.cc/bvjNDvYq/Whats_App_Image_2025_11_28_at_09_56_40_a9e3ea2b.jpg" alt="Promotional Video Thumbnail 2" class="w-full h-auto object-cover transition-opacity duration-300 group-hover:opacity-75">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                    <div class="text-center">
+                                        <i class="fa-solid fa-circle-play text-white text-5xl mb-2"></i>
+                                        <p class="text-white font-bold text-lg handwritten">Narrative/Promotional Edit</p>
+                                        <p class="text-xs text-gray-200">Click to view on Drive (Link 2)</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                        
+                        <h5 class="handwritten text-xl font-bold mb-4 mt-8 text-brand-dark">Studio Tools:</h5>
+                        <div class="flex flex-wrap gap-4">
+                             <span class="sticker bg-[#20002E] text-[#E083FA] px-3 py-2 rounded-lg handwritten text-xl border-2 border-[#E083FA] flex items-center font-bold">
+                                Pr (Premier Pro)
+                            </span>
+                             <span class="sticker bg-[#002824] text-[#00E2B8] px-3 py-2 rounded-lg handwritten text-xl border-2 border-[#00E2B8] flex items-center font-bold">
+                                Au (Audition)
+                            </span>
+                             <span class="sticker bg-black text-white px-3 py-2 rounded-lg handwritten text-lg border-2 border-gray-800 flex items-center">
+                                <span class="font-bold">CapCut</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="stack" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-3xl font-bold mb-8 relative inline-block">
+                    The Full Creative Stack
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-red rounded-full opacity-50"></span>
+                </h3>
+                <p class="text-xl text-brand-gray mb-10 handwritten">The production tools that make the magic happen.</p>
+                
+                <div class="flex flex-wrap justify-center gap-6 p-8 bg-slate-100 rounded-2xl shadow-inner">
+                    <span class="sticker bg-[#001E36] text-[#31A8FF] px-4 py-3 rounded-xl handwritten text-2xl border-2 border-[#31A8FF] flex items-center font-bold">
+                        Ps <span class="text-lg ml-2 font-inter">| Photoshop</span>
+                    </span>
+                    <span class="sticker bg-[#20002E] text-[#E083FA] px-4 py-3 rounded-xl handwritten text-2xl border-2 border-[#E083FA] flex items-center font-bold">
+                        Pr <span class="text-lg ml-2 font-inter">| Premier Pro</span>
+                    </span>
+                    <span class="sticker bg-[#002824] text-[#00E2B8] px-4 py-3 rounded-xl handwritten text-2xl border-2 border-[#00E2B8] flex items-center font-bold">
+                        Au <span class="text-lg ml-2 font-inter">| Audition</span>
+                    </span>
+                    <span class="sticker bg-gradient-to-r from-teal-400 to-blue-500 text-white px-4 py-3 rounded-xl handwritten text-2xl flex items-center">
+                        <span class="font-bold">Canva</span>
+                    </span>
+                    <span class="sticker bg-black text-white px-4 py-3 rounded-xl handwritten text-2xl border-2 border-gray-800 flex items-center">
+                        <span class="font-bold">CapCut</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="clients" class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2">Clients & Collaborations</h3>
+                    <p class="handwritten text-xl text-brand-gray">Building powerful digital presence for diverse brands.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    
+                    <div class="p-6 border rounded-xl hover:shadow-md transition duration-300">
+                        <h4 class="text-2xl font-bold mb-2 text-brand-red">Search Media</h4>
+                        <p class="text-brand-gray mb-3 text-sm italic">Creative Director & Full-Stack Content Lead</p>
+                        <ul class="text-sm text-brand-gray list-disc list-inside text-left mx-auto max-w-xs">
+                            <li>Oversaw creative vision and strategy.</li>
+                            <li>Produced social media graphics and video content.</li>
+                            <li>Authored engaging content scripts.</li>
+                        </ul>
+                         <a href="https://searchmedia.futminna.edu.ng" target="_blank" class="mt-4 text-xs font-semibold text-brand-red hover:underline block">Visit Site <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+                    </div>
+
+                    <div class="p-6 border rounded-xl hover:shadow-md transition duration-300">
+                        <h4 class="text-2xl font-bold mb-2 text-brand-red">Wascal</h4>
+                        <p class="text-brand-gray mb-3 text-sm italic">Video Production Specialist</p>
+                        <ul class="text-sm text-brand-gray list-disc list-inside text-left mx-auto max-w-xs">
+                            <li>Created high-quality promotional videos.</li>
+                            <li>Ensured cinematic and brand consistency.</li>
+                            <li>Executed post-production editing and sound.</li>
+                        </ul>
+                         <a href="https://www.wascal.org" target="_blank" class="mt-4 text-xs font-semibold text-brand-red hover:underline block">Visit Site <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+                    </div>
+
+                    <div class="p-6 border rounded-xl hover:shadow-md transition duration-300">
+                        <h4 class="text-2xl font-bold mb-2 text-brand-red">Personal Brand & Freelance Gigs</h4>
+                        <p class="text-brand-gray mb-3 text-sm italic">Growth Hacking & Diverse Media Solutions</p>
+                        <ul class="text-sm text-brand-gray list-disc list-inside text-left mx-auto max-w-xs">
+                            <li>Managed personal social media page to achieve organic growth (6.4M+ Impressions).</li>
+                            <li>Executed various media projects for diverse entrepreneurial clients.</li>
+                            <li>Provided tailored video, graphics, and script solutions.</li>
+                        </ul>
+                         <a href="https://www.linkedin.com/in/shamsudeen-kunle-alimi-465692297?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BqHm2XEvBTGiNAPQXSzzvIg%3D%3D" target="_blank" class="mt-4 text-xs font-semibold text-brand-red hover:underline block">View LinkedIn Profile <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="insights" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2">Creative Insights & Strategy Blog</h3>
+                    <p class="handwritten text-xl text-brand-gray">Where I share my thoughts on media, design, and growth strategy.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 p-8 bg-slate-50 rounded-2xl shadow-inner border border-gray-200">
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-2 border-red-300">
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">The Power of Integrated Content</h4>
+                        <p class="text-sm text-brand-gray mb-3">
+                            Creative success in the modern digital space requires a unified approach. This insight argues that separating video, sound, and graphics leads to disjointed campaigns. My method focuses on blending these elements from the script phase forward, ensuring every medium reinforces the central message for maximum brand impact.
+                        </p>
+                         <a href="#contact" class="text-sm font-semibold text-brand-red hover:underline mt-2 inline-block">Read Full Insight <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-2 border-red-300">
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">From Raw Footage to ROI</h4>
+                        <p class="text-sm text-brand-gray mb-3">
+                            The video editor is the final gatekeeper of engagement. This piece breaks down critical post-production decisions—like pacing, sound design, and subtitle placement—that directly correlate with audience retention and conversion rates. It’s about editing not just for aesthetics, but for measurable business results.
+                        </p>
+                        <a href="#contact" class="text-sm font-semibold text-brand-red hover:underline mt-2 inline-block">Read Full Insight <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center flex flex-col justify-center border-t-2 border-red-300">
+                        <p class="font-bold text-brand-red handwritten text-xl mb-3">Ready to Apply These Strategies?</p>
+                        <a href="#contact" class="px-4 py-2 bg-brand-red text-white font-bold rounded-full hover:bg-red-600 transition">Start a Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metrics" class="py-16 bg-brand-dark text-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h3 class="text-3xl font-bold mb-12">Measurable Impact</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-gray-800 rounded-2xl transform hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-bold text-brand-red mb-2">6.40M+</div>
+                        <div class="handwritten text-xl text-gray-300">Avg. Monthly Impressions</div>
+                        <p class="text-sm text-gray-400 mt-1">Across all managed social channels (X, IG, TikTok).</p>
+                    </div>
+                    <div class="p-6 bg-gray-800 rounded-2xl transform hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-bold text-brand-red mb-2">709%</div>
+                        <div class="handwritten text-xl text-gray-300">Engagement Growth</div>
+                        <p class="text-sm text-gray-400 mt-1">Increase in direct audience interaction.</p>
+                    </div>
+                    <div class="p-6 bg-gray-800 rounded-2xl transform hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-bold text-brand-red mb-2">600%+</div>
+                        <div class="handwritten text-xl text-gray-300">Reach on Instagram</div>
+                         <p class="text-sm text-gray-400 mt-1">Driven by high-impact visual strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-white text-center">
+            <div class="max-w-3xl mx-auto px-4">
+                <h3 class="text-4xl font-bold mb-6 text-brand-dark">Let's Create Something Amazing</h3>
+                <p class="text-xl text-brand-gray mb-10">
+                    Ready to elevate your brand with integrated strategy and design?
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:shamsudeenalimi01@gmail.com" class="px-8 py-4 bg-brand-red text-white font-bold rounded-xl shadow-lg hover:bg-red-600 transition flex items-center justify-center">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/shamsudeen-kunle-alimi-465692297?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BqHm2XEvBTGiNAPQXSzzvIg%3D%3D" target="_blank" class="px-8 py-4 bg-slate-100 text-brand-dark font-bold rounded-xl hover:bg-slate-200 transition flex items-center justify-center">
+                        <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="py-6 text-center text-gray-400 text-sm">
+            &copy; 2025 Shamsudeen Kunle Alimi. All rights reserved.
+        </footer>
+    </main>
+
+    <div id="lightbox-overlay">
+        <img id="lightbox-image" src="" alt="Enlarged Analytic Proof">
+    </div>
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-brand-red text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-red-600 z-50">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // 1. Tab Switching Logic
+        const tabs = document.querySelectorAll('.role-tab');
+        const contents = document.querySelectorAll('.role-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const role = tab.getAttribute('data-role');
+                
+                // Hide all contents
+                contents.forEach(c => c.classList.add('hidden'));
+                // Remove active style from all tabs
+                tabs.forEach(t => {
+                    t.classList.remove('active-tab', 'bg-white', 'shadow-sm', 'text-brand-dark');
+                    t.classList.add('text-gray-500', 'hover:bg-white/50');
+                });
+
+                // Show selected content
+                document.getElementById(`${role}-content`).classList.remove('hidden');
+                // Add active style
+                tab.classList.add('active-tab', 'bg-white', 'shadow-sm');
+                tab.classList.remove('text-gray-500', 'hover:bg-white/50');
+            });
+        });
+        
+        // Ensure initial state is correctly set up
+        document.querySelector('.role-tab[data-role="strategy"]').click();
+
+
+        // 2. Lightbox Logic
+        const lightboxOverlay = document.getElementById('lightbox-overlay');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const analyticsItems = document.querySelectorAll('.analytics-item');
+
+        analyticsItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.getAttribute('data-img');
+                lightboxImage.src = imgSrc;
+                lightboxOverlay.style.display = 'flex';
+            });
+        });
+
+        // Close lightbox when clicking the overlay
+        lightboxOverlay.addEventListener('click', () => {
+            lightboxOverlay.style.display = 'none';
+        });
+
+
+        // 3. Back to Top Logic
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+    </script>
+</body>
+</html>
